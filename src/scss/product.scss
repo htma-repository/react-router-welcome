@@ -1,0 +1,23 @@
+.product {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    row-gap: 1rem;
+  }
+
+  &__link {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: chocolate;
+
+    &:hover {
+      color: brown;
+    }
+  }
+}
