@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Welcome from "./components/Welcome";
 import Product from "./components/Product";
-import Navigation from "./components/Navigation/Navigation";
+import NavigationMenu from "./components/Navigation/Navigation";
 import ProductDetails from "./components/ProductDetails";
 import "./App.scss";
 
@@ -11,18 +11,17 @@ function App() {
   return (
     <Fragment>
       <header>
-        <Navigation />
+        <NavigationMenu />
       </header>
       <main>
-        <Route path={"/welcome"}>
-          <Welcome />
-        </Route>
-        <Route path={"/product"}>
-          <Product />
-        </Route>
-        <Route path={"/product/:productId"}>
-          <ProductDetails />
-        </Route>
+        <Routes>
+          <Route path={"/"} element={<Welcome />} />
+          <Route path={"/welcome/*"} element={<Welcome />}>
+            <Route path="new-user" element={<p>Welcome Page</p>} />
+          </Route>
+          <Route path={"/product"} element={<Product />} />
+          <Route path={"/product/:productId"} element={<ProductDetails />} />
+        </Routes>
       </main>
     </Fragment>
   );

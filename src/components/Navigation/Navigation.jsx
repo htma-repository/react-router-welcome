@@ -8,12 +8,18 @@ const Navigation = () => {
     <nav className="navigation">
       <ul className="navigation__links">
         <li className="navigation__link">
-          <NavLink activeClassName="active" to={"/welcome"}>
+          <NavLink
+            className={(activeLink) => (activeLink.isActive ? "active" : "")}
+            to={"/welcome"}
+          >
             Welcome
           </NavLink>
         </li>
         <li>
-          <NavLink activeClassName="active" to={"/product"}>
+          <NavLink
+            className={(activeLink) => (activeLink.isActive ? "active" : "")}
+            to={"/product"}
+          >
             Product
           </NavLink>
         </li>
