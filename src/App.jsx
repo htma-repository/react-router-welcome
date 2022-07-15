@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { Route, Routes } from "react-router-dom";
 
+import Home from "./components/Home";
 import Welcome from "./components/Welcome";
 import Product from "./components/Product";
 import NavigationMenu from "./components/Navigation/Navigation";
@@ -15,7 +16,7 @@ function App() {
       </header>
       <main>
         <Routes>
-          <Route path={"/"} element={<Welcome />} />
+          <Route path={"/"} element={<Home />} />
           <Route path={"/welcome/*"} element={<Welcome />}>
             <Route path="new-user" element={<p>Welcome Page</p>} />
           </Route>
